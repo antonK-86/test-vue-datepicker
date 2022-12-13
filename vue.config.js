@@ -1,5 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "/test-vue-datepicker/",
+  // publicPath: "/test-vue-datepicker/",
 });
