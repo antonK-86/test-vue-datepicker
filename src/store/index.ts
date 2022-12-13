@@ -21,12 +21,24 @@ export default createStore<IState>({
     },
   },
   mutations: {
-    changeDayList(state, date) {
-      state.dayList = setDayList(date, state.eventList);
+    changeDayList(state, payload) {
+      state.dayList = setDayList(payload, state.eventList);
     },
-    changeDate(state, newDate) {
-      console.log('newDate', newDate)
-      state.date = newDate;
+    changeDate(state, payload) {
+      state.date = payload;
+    },
+    changeEventList(state, payload) {
+      const { date, description } = payload;
+      const [day, month, year] = date.split(".");
+      const parseDate = `${year}-${month}-${day}`;
+
+      state.eventList.push({
+        date: parseDate,
+        year: Number(year),
+        month: Number(month),
+        day: Number(day),
+        name: description,
+      });
     }
   },
   actions: {},

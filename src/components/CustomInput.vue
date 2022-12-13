@@ -5,7 +5,7 @@
     v-bind:value="value"
     @change="onChange"
     :class="{ err: !isValid }"
-    placeholder="placeholder"
+    :placeholder="placeholder"
   />
 </template>
 

@@ -1,8 +1,12 @@
 <template>
-  <div class="wrapper">
-    <InputDate :setIsShowCalendar="setIsShowCalendar" />
-    <CustomCalendar v-if="isShowCalendar" />
-    <NewEvent />
+  <div class="layout">
+    <div class="container">
+      <InputDate :setIsShowCalendar="setIsShowCalendar" />
+      <CustomCalendar v-if="isShowCalendar" />
+    </div>
+    <div class="container">
+      <NewEvent />
+    </div>
   </div>
 </template>
 
@@ -26,7 +30,6 @@ export default defineComponent({
   },
   methods: {
     setIsShowCalendar() {
-      console.log("this.isShowCalendar", this.isShowCalendar);
       this.isShowCalendar = !this.isShowCalendar;
     },
   },
@@ -48,9 +51,14 @@ export default defineComponent({
   color: #2c3e50;
 }
 
-.wrapper {
+.layout {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
   width: 350px;
-  margin: 0 auto;
   padding: 20px;
 }
 </style>

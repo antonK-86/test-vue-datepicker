@@ -30,18 +30,28 @@ export default function setDayList(
 
   const result = Array(startDayOfWeek - 1).fill({ value: 0, eventName: "" });
 
-  for (let i = 1; i <= lastDay; i++) {
-    const list = eventList.filter(
-      (event) => event.month === Number(month) && event.year === Number(year)
-    );
-    const eventDay = list.find((event) => event.day === i);
+  let i = 1;
 
+  while (i <= lastDay) {
+    const list = eventList.filter((event) => event.month === Number(month));
+    const eventDay = list.find((event) => event.day === i);
     result.push({
       value: i,
       eventName: eventDay ? eventDay.name : "",
       date: eventDay ? eventDay.date : "",
     });
+    i++;
   }
+
+  // for (let i = 1; i <= lastDay; i++) {
+  //   const list = eventList.filter((event) => event.month === Number(month));
+  //   const eventDay = list.find((event) => event.day === i);
+  //   result.push({
+  //     value: i,
+  //     eventName: eventDay ? eventDay.name : "",
+  //     date: eventDay ? eventDay.date : "",
+  //   });
+  // }
 
   return result;
 }

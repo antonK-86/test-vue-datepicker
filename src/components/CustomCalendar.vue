@@ -87,7 +87,6 @@ export default defineComponent({
     this.changeDayList(this.DATE);
   },
   updated() {
-    console.log("update");
     if (this.date !== this.DATE && !this.isChangeMonth) {
       this.date = this.DATE;
       this.changeDayList(this.DATE);
@@ -98,7 +97,7 @@ export default defineComponent({
 
 <style scoped>
 .calendar {
-  padding: 16px;
+  padding: 8px 16px;
   box-shadow: rgb(48 48 48 / 20%) 0px 6px 20px;
   border-radius: 4px;
 }
