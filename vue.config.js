@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/test-vue-datepicker/",
+  publicPath: "/test-vue-datepicker/dist",
 };
